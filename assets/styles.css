@@ -80,3 +80,6 @@ h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.07; letter-spacing: -.025
 .region { font-size: 12px; color: var(--muted); }
 .nav-in { gap: 12px; }
 .logo { white-space: nowrap; }
+.stats { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 16px; }
+.stats th, .stats td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+.stats th { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }

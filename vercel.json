@@ -6,17 +6,64 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
-    { "source": "/offers.json", "headers": [
-      { "key": "Access-Control-Allow-Origin", "value": "*" },
-      { "key": "Content-Type", "value": "application/json; charset=utf-8" },
-      { "key": "Cache-Control", "value": "public, max-age=600" }
-    ] },
-    { "source": "/(llms.txt|llms-full.txt)", "headers": [
-      { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-      { "key": "Access-Control-Allow-Origin", "value": "*" }
-    ] },
-    { "source": "/(.*).md", "headers": [
-      { "key": "Content-Type", "value": "text/markdown; charset=utf-8" }
-    ] }
-  ]
+    {
+      "source": "/offers.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=600"
+        }
+      ]
+    },
+    {
+      "source": "/(llms.txt|llms-full.txt)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/stats",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/go/:id",
+      "destination": "/api/go?id=:id"
+    }
+  ],
+  "functions": {
+    "api/go.js": {
+      "includeFiles": "{data/offers.json,site.config.json}"
+    }
+  }
 }

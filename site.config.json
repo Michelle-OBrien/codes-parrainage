@@ -22,5 +22,9 @@
     "michelle": "Michelle",
     "jean": "Jean"
   },
-  "contact": ""
+  "contact": "",
+  "tracking": {
+    "supabaseUrl": "https://uyauzhyxyarktrolsmiz.supabase.co",
+    "publishableKey": "sb_publishable_bcE-5fXWF6AtR8LWHJPtIw_Dsdvd22C"
+  }
 }

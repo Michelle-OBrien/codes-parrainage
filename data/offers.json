@@ -4,26 +4,60 @@
     "brand": "BoursoBank",
     "category": "banque",
     "referrer": "michelle",
-    "url": "https://REMPLACER-PAR-TON-LIEN",
-    "code": "REMPLACER",
+    "url": "https://bour.so/p/xaIp6XY2mT8",
+    "code": "",
     "reward": {
-      "fr": "Prime de bienvenue à l'ouverture du compte",
-      "en": "Welcome bonus when you open an account"
+      "en": "Up to €180 welcome bonus for opening an account",
+      "fr": "Jusqu'à 180 € offerts à l'ouverture du compte",
+      "es": "Hasta 180 € de bono de bienvenida al abrir la cuenta",
+      "de": "Bis zu 180 € Willkommensbonus bei Kontoeröffnung",
+      "it": "Fino a 180 € di bonus di benvenuto all'apertura del conto",
+      "pt": "Até 180 € de bônus de boas-vindas ao abrir a conta"
     },
     "conditions": {
-      "fr": "Nouveau client uniquement. Montant et conditions selon l'offre en cours.",
-      "en": "New customers only. Amount and terms depend on the current offer."
+      "en": "New customers living in France, adults only. Bonus paid in steps: account opening, first deposit of at least €300 within 30 days, card payments during the first 3 months, and bank transfer service (EasyMove). Amount set by BoursoBank and subject to change.",
+      "fr": "Nouveaux clients majeurs résidant en France. Prime versée par étapes : ouverture, premier versement d'au moins 300 € sous 30 jours, paiements par carte les 3 premiers mois et mobilité bancaire (EasyMove). Montant fixé par BoursoBank, susceptible d'évoluer.",
+      "es": "Nuevos clientes mayores de edad residentes en Francia. El bono se paga por etapas: apertura, primer ingreso de al menos 300 € en 30 días, pagos con tarjeta los 3 primeros meses y traslado bancario (EasyMove). Importe fijado por BoursoBank, puede cambiar.",
+      "de": "Neukunden ab 18 Jahren mit Wohnsitz in Frankreich. Bonus in Stufen: Kontoeröffnung, erste Einzahlung von mindestens 300 € innerhalb von 30 Tagen, Kartenzahlungen in den ersten 3 Monaten und Kontowechselservice (EasyMove). Betrag von BoursoBank festgelegt, Änderungen vorbehalten.",
+      "it": "Nuovi clienti maggiorenni residenti in Francia. Bonus versato in più fasi: apertura, primo versamento di almeno 300 € entro 30 giorni, pagamenti con carta nei primi 3 mesi e trasferimento del conto (EasyMove). Importo stabilito da BoursoBank, soggetto a modifiche.",
+      "pt": "Novos clientes maiores de idade residentes na França. Bônus pago em etapas: abertura, primeiro depósito de pelo menos 300 € em 30 dias, pagamentos com cartão nos 3 primeiros meses e portabilidade bancária (EasyMove). Valor definido pela BoursoBank, pode mudar."
     },
     "steps": {
-      "fr": [
-        "Ouvre le lien de parrainage",
-        "Crée ton compte en ligne",
-        "Saisis le code si demandé"
-      ],
       "en": [
         "Open the referral link",
-        "Create your account online",
-        "Enter the code if asked"
+        "Open your account online (about 10 minutes)",
+        "Deposit at least €300 within 30 days",
+        "Use your card at least once a month for 3 months"
+      ],
+      "fr": [
+        "Ouvre le lien de parrainage",
+        "Ouvre ton compte en ligne (environ 10 minutes)",
+        "Verse au moins 300 € sous 30 jours",
+        "Utilise ta carte au moins une fois par mois pendant 3 mois"
+      ],
+      "es": [
+        "Abre el enlace de referido",
+        "Abre tu cuenta en línea (unos 10 minutos)",
+        "Ingresa al menos 300 € en 30 días",
+        "Usa tu tarjeta al menos una vez al mes durante 3 meses"
+      ],
+      "de": [
+        "Öffne den Empfehlungslink",
+        "Eröffne dein Konto online (ca. 10 Minuten)",
+        "Zahle innerhalb von 30 Tagen mindestens 300 € ein",
+        "Nutze deine Karte 3 Monate lang mindestens einmal pro Monat"
+      ],
+      "it": [
+        "Apri il link di invito",
+        "Apri il conto online (circa 10 minuti)",
+        "Versa almeno 300 € entro 30 giorni",
+        "Usa la carta almeno una volta al mese per 3 mesi"
+      ],
+      "pt": [
+        "Abra o link de indicação",
+        "Abra sua conta online (cerca de 10 minutos)",
+        "Deposite pelo menos 300 € em 30 dias",
+        "Use o cartão pelo menos uma vez por mês durante 3 meses"
       ]
     },
     "expires": null,
@@ -60,7 +94,7 @@
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true,
+    "active": false,
     "country": "FR"
   },
   {
@@ -92,7 +126,7 @@
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true,
+    "active": false,
     "country": "Global"
   },
   {
@@ -124,7 +158,7 @@
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true,
+    "active": false,
     "country": "Global"
   }
 ]

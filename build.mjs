@@ -43,6 +43,9 @@ const write = (rel, content) => {
   fs.mkdirSync(path.dirname(f), { recursive: true });
   fs.writeFileSync(f, content);
 };
+// Lien suivi : /go/<id> enregistre le clic puis redirige vers le vrai lien de parrainage
+const go = (o, src, lang) => `/go/${o.id}?src=${src}${lang ? `&lang=${lang}` : ""}`;
+const dest = (o) => { try { return new URL(o.url).host; } catch { return ""; } };
 const pageFile = (p) => (p === "/" ? "index.html" : `${p.replace(/^\//, "")}/index.html`);
 
 function layout({ lang, title, desc, paths, body, jsonld }) {
@@ -121,7 +124,7 @@ function card(o, lang) {
   <p class="reward">${esc(tx(o, "reward", lang))}</p>
   <p class="muted small">${esc(tx(o, "conditions", lang))}</p>
   ${codeBox(o, t)}
-  <a class="btn" href="${esc(o.url)}" rel="sponsored noopener" target="_blank">${t.open}</a>
+  <a class="btn" href="${esc(go(o, "web", lang))}" rel="sponsored noopener nofollow" target="_blank">${t.open}</a>
 </article>`;
 }
 
@@ -134,7 +137,7 @@ function offerMd(o, lang) {
 - ${t.reward}: ${tx(o, "reward", lang)}
 - ${t.conditions}: ${tx(o, "conditions", lang)}
 - ${t.code}: ${o.code || t.noCode}
-- ${t.link}: ${o.url}
+- ${t.link}: ${BASE}${go(o, "ai")} (→ ${dest(o)})
 - ${t.region}: ${region(o)}
 - ${t.updated}: ${o.updated}${o.expires ? `\n- ${t.expires}: ${o.expires}` : ""}
 ${s ? `\n## ${t.how}\n\n${s}\n` : ""}`;
@@ -179,7 +182,7 @@ ${offers.map((o) => card(o, lang)).join("\n")}
   <h1>${t.offerFor} ${esc(o.brand)}</h1>
   <p class="reward big">${esc(tx(o, "reward", lang))}</p>
   ${codeBox(o, t)}
-  <a class="btn" href="${esc(o.url)}" rel="sponsored noopener" target="_blank">${t.open}</a>
+  <a class="btn" href="${esc(go(o, "web", lang))}" rel="sponsored noopener nofollow" target="_blank">${t.open}</a>
   <h2>${t.conditions}</h2><p>${esc(tx(o, "conditions", lang))}</p>
   ${s ? `<h2>${t.how}</h2><ol>${s}</ol>` : ""}
   <dl class="meta">
@@ -207,8 +210,10 @@ ${offers.map((o) => card(o, lang)).join("\n")}
 }
 
 // ---------- fichiers pour agents ----------
-const publicOffers = offers.map(({ active, ...o }) => ({
+const publicOffers = offers.map(({ active, url, ...o }) => ({
   ...o,
+  url: BASE + go({ ...o, url }, "ai"),
+  destination: dest({ url }),
   category_label: CATEGORIES[o.category],
   page: Object.fromEntries(L.map((l) => [l, BASE + offerPath(o, l)])),
   referrer: o.referrer ? cfg.referrers[o.referrer] || o.referrer : null,
@@ -221,7 +226,7 @@ write("offers.json", JSON.stringify({
   count: publicOffers.length, offers: publicOffers,
 }, null, 2));
 
-const line = (o) => `- [${o.brand}](${BASE}${offerPath(o, DEFAULT_LANG)}.md): ${tx(o, "reward", "en")}${o.code ? ` · code ${o.code}` : ""} · region ${region(o)} · referral link ${o.url}`;
+const line = (o) => `- [${o.brand}](${BASE}${offerPath(o, DEFAULT_LANG)}.md): ${tx(o, "reward", "en")}${o.code ? ` · code ${o.code}` : ""} · region ${region(o)} · referral link ${BASE}${go(o, "ai")}`;
 write("llms.txt", `# ${cfg.name}
 
 > ${cfg.description.en}
@@ -242,7 +247,7 @@ ${offers.map(line).join("\n")}
 - [llms-full.txt](${BASE}/llms-full.txt): full details of every offer
 `);
 write("llms-full.txt", `# ${cfg.name} · full offer list (${TODAY})\n\n${cfg.description.en}\n\n` + offers.map((o) => offerMd(o, "en") + (o.reward.fr ? "\n" + offerMd(o, "fr") : "")).join("\n---\n\n"));
-write("index.md", `# ${cfg.name}\n\n${cfg.description.en}\n\n${offers.map((o) => `- [${o.brand}](${BASE}${offerPath(o, "en")}.md): ${tx(o, "reward", "en")}${o.code ? ` · code ${o.code}` : ""} · ${region(o)} · ${o.url}`).join("\n")}\n`);
+write("index.md", `# ${cfg.name}\n\n${cfg.description.en}\n\n${offers.map((o) => `- [${o.brand}](${BASE}${offerPath(o, "en")}.md): ${tx(o, "reward", "en")}${o.code ? ` · code ${o.code}` : ""} · ${region(o)} · ${BASE}${go(o, "ai")}`).join("\n")}\n`);
 
 const urls = [...L.map(home), ...offers.flatMap((o) => L.map((l) => offerPath(o, l)))];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
@@ -251,9 +256,20 @@ ${urls.map((u) => `<url><loc>${BASE}${u}</loc><lastmod>${TODAY}</lastmod></url>`
 </urlset>`);
 
 const bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot", "Googlebot", "MistralAI-User", "CCBot"];
-write("robots.txt", `# All robots, AI agents included, are welcome.\n${bots.map((b) => `User-agent: ${b}\nAllow: /\n`).join("\n")}\nUser-agent: *\nAllow: /\n\nSitemap: ${BASE}/sitemap.xml\n`);
+write("robots.txt", `# All robots, AI agents included, are welcome.\n${bots.map((b) => `User-agent: ${b}\nAllow: /\nDisallow: /go/\nDisallow: /stats\n`).join("\n")}\nUser-agent: *\nAllow: /\nDisallow: /go/\nDisallow: /stats\n\nSitemap: ${BASE}/sitemap.xml\n`);
 
 write("404.html", layout({ lang: DEFAULT_LANG, title: `404 · ${cfg.name}`, desc: cfg.description.en, paths: homePaths, body: `<section class="hero"><h1>${LANGS.en.notFound}</h1><p class="lead">${L.map((l) => `<a href="${home(l)}">${LANGS[l].back}</a>`).join(" · ")}</p></section>`, jsonld: { "@context": "https://schema.org", "@type": "WebPage", name: "404" } }));
+
+// Page privée de statistiques (non indexée, données protégées par une clé côté Supabase)
+const names = Object.fromEntries(raw.map((o) => [o.id, o.brand]));
+write("stats/index.html", `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Stats · ${esc(cfg.name)}</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css"></head>
+<body><header class="nav"><div class="wrap nav-in"><a class="logo" href="/">${esc(cfg.name)}</a><span class="muted small">Stats</span></div></header>
+<main class="wrap detail"><h1>Clics</h1><p id="msg" class="muted">Entre ta clé pour voir les statistiques.</p>
+<form id="login" class="code"><input id="key" type="password" placeholder="Clé" autocomplete="current-password" style="flex:1;font:inherit;border:0;background:transparent;color:var(--text);outline:none"><button class="copy" type="submit">Voir</button></form>
+<div id="table" hidden><table class="stats"><thead><tr><th>Offre</th><th>Source</th><th>Clics</th><th>7 j</th><th>Robots</th><th>Dernier</th></tr></thead><tbody id="tbody"></tbody></table>
+<p class="muted small">Source : <b>web</b> = bouton du site · <b>ai</b> = lien donné par un agent IA (llms.txt, offers.json) · <b>direct</b> = lien partagé tel quel. Les inscriptions réelles se voient dans l'espace parrainage de chaque marque.</p></div></main>
+<script>window.STATS_CONFIG=${JSON.stringify({ url: cfg.tracking.supabaseUrl, key: cfg.tracking.publishableKey, names })}</script><script src="/stats.js" defer></script></body></html>`);
 
 for (const f of fs.readdirSync(path.join(ROOT, "assets"))) fs.copyFileSync(path.join(ROOT, "assets", f), path.join(OUT, f));
 
