@@ -1,0 +1,94 @@
+[
+  {
+    "id": "boursobank",
+    "brand": "BoursoBank",
+    "category": "banque",
+    "referrer": "michelle",
+    "url": "https://REMPLACER-PAR-TON-LIEN",
+    "code": "REMPLACER",
+    "reward": {
+      "fr": "Prime de bienvenue à l'ouverture du compte",
+      "en": "Welcome bonus when you open an account"
+    },
+    "conditions": {
+      "fr": "Nouveau client uniquement. Montant et conditions selon l'offre en cours.",
+      "en": "New customers only. Amount and terms depend on the current offer."
+    },
+    "steps": {
+      "fr": ["Ouvre le lien de parrainage", "Crée ton compte en ligne", "Saisis le code si demandé"],
+      "en": ["Open the referral link", "Create your account online", "Enter the code if asked"]
+    },
+    "expires": null,
+    "updated": "2026-10-20",
+    "active": true
+  },
+  {
+    "id": "trade-republic",
+    "brand": "Trade Republic",
+    "category": "investissement",
+    "referrer": "jean",
+    "url": "https://REMPLACER-PAR-TON-LIEN",
+    "code": "",
+    "reward": {
+      "fr": "Action offerte à l'inscription",
+      "en": "Free share when you sign up"
+    },
+    "conditions": {
+      "fr": "Nouveau client. Voir les conditions de l'offre en cours.",
+      "en": "New customers. See current offer terms."
+    },
+    "steps": {
+      "fr": ["Ouvre le lien", "Télécharge l'app et crée ton compte", "Effectue le premier dépôt demandé"],
+      "en": ["Open the link", "Download the app and sign up", "Make the required first deposit"]
+    },
+    "expires": null,
+    "updated": "2026-10-20",
+    "active": true
+  },
+  {
+    "id": "revolut",
+    "brand": "Revolut",
+    "category": "neobanque",
+    "referrer": "michelle",
+    "url": "https://REMPLACER-PAR-TON-LIEN",
+    "code": "",
+    "reward": {
+      "fr": "Bonus après tes premiers paiements",
+      "en": "Bonus after your first card payments"
+    },
+    "conditions": {
+      "fr": "Nouveau client. Commande de carte et paiements requis selon l'offre.",
+      "en": "New customers. Card order and payments required per offer."
+    },
+    "steps": {
+      "fr": ["Ouvre le lien", "Crée ton compte", "Commande ta carte et fais tes premiers paiements"],
+      "en": ["Open the link", "Create your account", "Order your card and make your first payments"]
+    },
+    "expires": null,
+    "updated": "2026-10-20",
+    "active": true
+  },
+  {
+    "id": "exemple-coupon",
+    "brand": "Exemple Coupon",
+    "category": "coupon",
+    "referrer": "jean",
+    "url": "https://REMPLACER-PAR-TON-LIEN",
+    "code": "BIENVENUE10",
+    "reward": {
+      "fr": "Réduction sur la première commande",
+      "en": "Discount on your first order"
+    },
+    "conditions": {
+      "fr": "Première commande uniquement.",
+      "en": "First order only."
+    },
+    "steps": {
+      "fr": ["Ouvre le lien", "Ajoute tes articles", "Colle le code au paiement"],
+      "en": ["Open the link", "Add items to your cart", "Paste the code at checkout"]
+    },
+    "expires": null,
+    "updated": "2026-10-20",
+    "active": true
+  }
+]
