@@ -1,0 +1,97 @@
+// Langues du site. Pour en ajouter une : un bloc dans LANGS + ses libellés dans CATEGORIES.
+// L'anglais est la langue par défaut (racine "/"). Les textes d'offre manquants retombent sur l'anglais.
+
+export const DEFAULT_LANG = "en";
+
+export const LANGS = {
+  en: {
+    name: "English", locale: "en_US", offerSlug: "offer",
+    home: "Home", offers: "active offers", open: "Open link", copy: "Copy", copied: "Copied",
+    code: "Code", noCode: "Direct link, no code", all: "All", conditions: "Terms", how: "How to claim it",
+    by: "Referrer", updated: "Updated", expires: "Expires", region: "Region", category: "Category",
+    reward: "Reward", link: "Referral link", agents: "For AI agents", agentsText: "Structured data available:",
+    mdHint: ", and every offer as Markdown (append <code>.md</code> to its URL)",
+    disclosure: "Referral links: we may receive a reward when you sign up through them, at no extra cost to you. Each brand sets its own terms, check them before signing up.",
+    back: "All offers", offerFor: "Referral", h1: "Deals &amp; referral codes",
+    titleSuffix: "referral codes, sign-up bonuses & deals",
+    offerTitle: (b, r) => `${b} referral code · ${r}`, notFound: "Page not found",
+  },
+  fr: {
+    name: "Français", locale: "fr_FR", offerSlug: "offre",
+    home: "Accueil", offers: "offres actives", open: "Ouvrir le lien", copy: "Copier", copied: "Copié",
+    code: "Code", noCode: "Lien direct, pas de code", all: "Tout", conditions: "Conditions", how: "Comment en profiter",
+    by: "Parrain", updated: "Mis à jour", expires: "Expire le", region: "Région", category: "Catégorie",
+    reward: "Récompense", link: "Lien de parrainage", agents: "Pour les agents IA", agentsText: "Données structurées disponibles :",
+    mdHint: ", et chaque offre en Markdown (ajoute <code>.md</code> à l'URL)",
+    disclosure: "Liens de parrainage : nous recevons parfois une récompense quand tu t'inscris via ces liens, sans surcoût pour toi. Chaque marque fixe ses conditions, vérifie-les avant de t'inscrire.",
+    back: "Toutes les offres", offerFor: "Parrainage", h1: "Bons plans et parrainages",
+    titleSuffix: "codes promo et liens de parrainage",
+    offerTitle: (b, r) => `Code parrainage ${b} · ${r}`, notFound: "Page introuvable",
+  },
+  es: {
+    name: "Español", locale: "es_ES", offerSlug: "oferta",
+    home: "Inicio", offers: "ofertas activas", open: "Abrir enlace", copy: "Copiar", copied: "Copiado",
+    code: "Código", noCode: "Enlace directo, sin código", all: "Todo", conditions: "Condiciones", how: "Cómo obtenerlo",
+    by: "Referente", updated: "Actualizado", expires: "Caduca el", region: "Región", category: "Categoría",
+    reward: "Recompensa", link: "Enlace de referido", agents: "Para agentes de IA", agentsText: "Datos estructurados disponibles:",
+    mdHint: ", y cada oferta en Markdown (añade <code>.md</code> a la URL)",
+    disclosure: "Enlaces de referido: podemos recibir una recompensa cuando te registras con ellos, sin coste extra para ti. Cada marca fija sus condiciones, revísalas antes de registrarte.",
+    back: "Todas las ofertas", offerFor: "Referido", h1: "Ofertas y códigos de referido",
+    titleSuffix: "códigos de referido, bonos de bienvenida y ofertas",
+    offerTitle: (b, r) => `Código de referido ${b} · ${r}`, notFound: "Página no encontrada",
+  },
+  de: {
+    name: "Deutsch", locale: "de_DE", offerSlug: "angebot",
+    home: "Startseite", offers: "aktive Angebote", open: "Link öffnen", copy: "Kopieren", copied: "Kopiert",
+    code: "Code", noCode: "Direkter Link, kein Code", all: "Alle", conditions: "Bedingungen", how: "So bekommst du es",
+    by: "Werber", updated: "Aktualisiert", expires: "Gültig bis", region: "Region", category: "Kategorie",
+    reward: "Prämie", link: "Empfehlungslink", agents: "Für KI-Agenten", agentsText: "Strukturierte Daten verfügbar:",
+    mdHint: ", und jedes Angebot als Markdown (<code>.md</code> an die URL anhängen)",
+    disclosure: "Empfehlungslinks: Wir erhalten eventuell eine Prämie, wenn du dich darüber anmeldest, ohne Mehrkosten für dich. Jede Marke legt ihre eigenen Bedingungen fest, prüfe sie vor der Anmeldung.",
+    back: "Alle Angebote", offerFor: "Empfehlung", h1: "Deals &amp; Empfehlungscodes",
+    titleSuffix: "Empfehlungscodes, Willkommensboni & Deals",
+    offerTitle: (b, r) => `${b} Empfehlungscode · ${r}`, notFound: "Seite nicht gefunden",
+  },
+  it: {
+    name: "Italiano", locale: "it_IT", offerSlug: "offerta",
+    home: "Home", offers: "offerte attive", open: "Apri il link", copy: "Copia", copied: "Copiato",
+    code: "Codice", noCode: "Link diretto, nessun codice", all: "Tutto", conditions: "Condizioni", how: "Come ottenerlo",
+    by: "Referente", updated: "Aggiornato", expires: "Scade il", region: "Regione", category: "Categoria",
+    reward: "Premio", link: "Link di invito", agents: "Per gli agenti IA", agentsText: "Dati strutturati disponibili:",
+    mdHint: ", e ogni offerta in Markdown (aggiungi <code>.md</code> all'URL)",
+    disclosure: "Link di invito: potremmo ricevere un premio quando ti iscrivi tramite questi link, senza costi aggiuntivi per te. Ogni marchio stabilisce le proprie condizioni, verificale prima di iscriverti.",
+    back: "Tutte le offerte", offerFor: "Invito", h1: "Offerte e codici invito",
+    titleSuffix: "codici invito, bonus di benvenuto e offerte",
+    offerTitle: (b, r) => `Codice invito ${b} · ${r}`, notFound: "Pagina non trovata",
+  },
+  pt: {
+    name: "Português", locale: "pt_BR", offerSlug: "oferta",
+    home: "Início", offers: "ofertas ativas", open: "Abrir link", copy: "Copiar", copied: "Copiado",
+    code: "Código", noCode: "Link direto, sem código", all: "Tudo", conditions: "Condições", how: "Como obter",
+    by: "Indicador", updated: "Atualizado", expires: "Expira em", region: "Região", category: "Categoria",
+    reward: "Recompensa", link: "Link de indicação", agents: "Para agentes de IA", agentsText: "Dados estruturados disponíveis:",
+    mdHint: ", e cada oferta em Markdown (adicione <code>.md</code> ao URL)",
+    disclosure: "Links de indicação: podemos receber uma recompensa quando você se cadastra por eles, sem custo extra para você. Cada marca define as próprias condições, confira antes de se cadastrar.",
+    back: "Todas as ofertas", offerFor: "Indicação", h1: "Ofertas e códigos de indicação",
+    titleSuffix: "códigos de indicação, bônus de boas-vindas e ofertas",
+    offerTitle: (b, r) => `Código de indicação ${b} · ${r}`, notFound: "Página não encontrada",
+  },
+};
+
+//                  en                fr                  es                    de               it                  pt
+const C = (en, fr, es, de, it, pt) => ({ en, fr, es, de, it, pt });
+export const CATEGORIES = {
+  banque:         C("Bank", "Banque", "Banco", "Bank", "Banca", "Banco"),
+  neobanque:      C("Neobank", "Néobanque", "Neobanco", "Neobank", "Neobanca", "Neobanco"),
+  investissement: C("Investing", "Investissement", "Inversión", "Investieren", "Investimenti", "Investimentos"),
+  crypto:         C("Crypto", "Crypto", "Cripto", "Krypto", "Cripto", "Cripto"),
+  ia:             C("AI tools", "Outils IA", "Herramientas IA", "KI-Tools", "Strumenti IA", "Ferramentas de IA"),
+  apps:           C("Apps & software", "Apps et logiciels", "Apps y software", "Apps & Software", "App e software", "Apps e software"),
+  freelance:      C("Freelance", "Freelance", "Freelance", "Freelance", "Freelance", "Freelance"),
+  energie:        C("Energy", "Énergie", "Energía", "Energie", "Energia", "Energia"),
+  telecom:        C("Telecom", "Télécom", "Telecom", "Telekom", "Telecomunicazioni", "Telecom"),
+  shopping:       C("Shopping", "Shopping", "Compras", "Shopping", "Shopping", "Compras"),
+  coupon:         C("Coupon", "Coupon", "Cupón", "Gutschein", "Coupon", "Cupom"),
+  transport:      C("Transport", "Transport", "Transporte", "Mobilität", "Trasporti", "Transporte"),
+  autre:          C("Other", "Autre", "Otro", "Sonstiges", "Altro", "Outro"),
+};

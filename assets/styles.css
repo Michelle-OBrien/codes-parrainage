@@ -71,3 +71,12 @@ h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.07; letter-spacing: -.025
 
 .foot { margin-top: 80px; padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
 .foot p { margin: 0 0 8px; max-width: 760px; }
+
+.langs { display: flex; gap: 2px; font-size: 13px; }
+.langs a { color: var(--muted); padding: 4px 7px; border-radius: 6px; font-weight: 500; }
+.langs a:hover { text-decoration: none; color: var(--text); }
+.langs a.on { color: var(--text); background: var(--tag); }
+@media (max-width: 420px) { .langs a { padding: 4px 4px; font-size: 12px; } .logo { font-size: 15px; } }
+.region { font-size: 12px; color: var(--muted); }
+.nav-in { gap: 12px; }
+.logo { white-space: nowrap; }

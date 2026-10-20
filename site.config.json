@@ -4,11 +4,19 @@
   "country": "Global",
   "tagline": {
     "en": "Hand-picked referral codes, sign-up bonuses and deals.",
-    "fr": "Codes de parrainage, primes de bienvenue et bons plans, sélectionnés à la main."
+    "fr": "Codes de parrainage, primes de bienvenue et bons plans, sélectionnés à la main.",
+    "es": "Códigos de referido, bonos de bienvenida y ofertas, seleccionados a mano.",
+    "de": "Handverlesene Empfehlungscodes, Willkommensboni und Deals.",
+    "it": "Codici invito, bonus di benvenuto e offerte, selezionati a mano.",
+    "pt": "Códigos de indicação, bônus de boas-vindas e ofertas, selecionados a dedo."
   },
   "description": {
     "en": "Verified referral links, invite codes, sign-up bonuses and promo codes for banks, apps, AI tools and services, in France and worldwide.",
-    "fr": "Liens de parrainage, codes promo et primes de bienvenue vérifiés pour banques, apps, outils IA et services, en France et à l'international."
+    "fr": "Liens de parrainage, codes promo et primes de bienvenue vérifiés pour banques, apps, outils IA et services, en France et à l'international.",
+    "es": "Enlaces de referido, códigos de invitación, bonos de bienvenida y códigos promocionales verificados para bancos, apps, herramientas de IA y servicios, en Francia y en todo el mundo.",
+    "de": "Geprüfte Empfehlungslinks, Einladungscodes, Willkommensboni und Rabattcodes für Banken, Apps, KI-Tools und Dienste, in Frankreich und weltweit.",
+    "it": "Link di invito, codici promozionali e bonus di benvenuto verificati per banche, app, strumenti IA e servizi, in Francia e nel mondo.",
+    "pt": "Links de indicação, códigos de convite, bônus de boas-vindas e cupons verificados para bancos, apps, ferramentas de IA e serviços, na França e no mundo."
   },
   "referrers": {
     "michelle": "Michelle",
