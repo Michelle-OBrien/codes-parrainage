@@ -15,12 +15,21 @@
       "en": "New customers only. Amount and terms depend on the current offer."
     },
     "steps": {
-      "fr": ["Ouvre le lien de parrainage", "Crée ton compte en ligne", "Saisis le code si demandé"],
-      "en": ["Open the referral link", "Create your account online", "Enter the code if asked"]
+      "fr": [
+        "Ouvre le lien de parrainage",
+        "Crée ton compte en ligne",
+        "Saisis le code si demandé"
+      ],
+      "en": [
+        "Open the referral link",
+        "Create your account online",
+        "Enter the code if asked"
+      ]
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true
+    "active": true,
+    "country": "FR"
   },
   {
     "id": "trade-republic",
@@ -38,12 +47,21 @@
       "en": "New customers. See current offer terms."
     },
     "steps": {
-      "fr": ["Ouvre le lien", "Télécharge l'app et crée ton compte", "Effectue le premier dépôt demandé"],
-      "en": ["Open the link", "Download the app and sign up", "Make the required first deposit"]
+      "fr": [
+        "Ouvre le lien",
+        "Télécharge l'app et crée ton compte",
+        "Effectue le premier dépôt demandé"
+      ],
+      "en": [
+        "Open the link",
+        "Download the app and sign up",
+        "Make the required first deposit"
+      ]
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true
+    "active": true,
+    "country": "FR"
   },
   {
     "id": "revolut",
@@ -61,12 +79,21 @@
       "en": "New customers. Card order and payments required per offer."
     },
     "steps": {
-      "fr": ["Ouvre le lien", "Crée ton compte", "Commande ta carte et fais tes premiers paiements"],
-      "en": ["Open the link", "Create your account", "Order your card and make your first payments"]
+      "fr": [
+        "Ouvre le lien",
+        "Crée ton compte",
+        "Commande ta carte et fais tes premiers paiements"
+      ],
+      "en": [
+        "Open the link",
+        "Create your account",
+        "Order your card and make your first payments"
+      ]
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true
+    "active": true,
+    "country": "Global"
   },
   {
     "id": "exemple-coupon",
@@ -84,11 +111,20 @@
       "en": "First order only."
     },
     "steps": {
-      "fr": ["Ouvre le lien", "Ajoute tes articles", "Colle le code au paiement"],
-      "en": ["Open the link", "Add items to your cart", "Paste the code at checkout"]
+      "fr": [
+        "Ouvre le lien",
+        "Ajoute tes articles",
+        "Colle le code au paiement"
+      ],
+      "en": [
+        "Open the link",
+        "Add items to your cart",
+        "Paste the code at checkout"
+      ]
     },
     "expires": null,
     "updated": "2026-10-20",
-    "active": true
+    "active": true,
+    "country": "Global"
   }
 ]

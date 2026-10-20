@@ -1,6 +1,6 @@
-# Codes Parrainage
+# Deals & Referrals (dealsandreferrals.com)
 
-Site statique de liens et codes de parrainage, pensé d'abord pour les agents IA (ChatGPT, Claude, Perplexity…), en FR + EN.
+Site statique de liens de parrainage, codes promo et bons plans, pensé d'abord pour les agents IA (ChatGPT, Claude, Perplexity…). Anglais en principal (`/`), français sur `/fr`.
 
 ## Le système (une seule source de vérité)
 
@@ -8,9 +8,9 @@ Tu ne touches qu'à **`data/offers.json`**. Au push sur GitHub, Vercel relance l
 
 | Fichier généré | À quoi il sert |
 |---|---|
-| `/` et `/en` | Pages humaines (FR / EN) |
-| `/offre/<id>` et `/en/offer/<id>` | Une page par offre (bien indexée) |
-| `/offre/<id>.md` | La même offre en Markdown, lu directement par les agents |
+| `/` et `/fr` | Pages humaines (EN / FR) |
+| `/offer/<id>` et `/fr/offre/<id>` | Une page par offre (bien indexée) |
+| `/offer/<id>.md` | La même offre en Markdown, lu directement par les agents |
 | `/llms.txt`, `/llms-full.txt` | Le "sommaire pour IA", standard que les agents consultent |
 | `/offers.json` | API publique structurée (CORS ouvert) |
 | `/sitemap.xml`, `/robots.txt` | Indexation ; tous les robots IA autorisés |
@@ -33,6 +33,7 @@ Copie un bloc dans `data/offers.json` :
   "reward": { "fr": "...", "en": "..." },
   "conditions": { "fr": "...", "en": "..." },
   "steps": { "fr": ["..."], "en": ["..."] },
+  "country": "FR",                      // ou "Global", "US", "ES"…
   "expires": null,                      // ou "2026-12-31"
   "updated": "2026-10-20",
   "active": true

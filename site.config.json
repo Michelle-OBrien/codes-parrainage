@@ -1,14 +1,14 @@
 {
-  "name": "Codes Parrainage",
-  "url": "https://codesparrainage.fr",
-  "country": "FR",
+  "name": "Deals & Referrals",
+  "url": "https://dealsandreferrals.com",
+  "country": "Global",
   "tagline": {
-    "fr": "Les meilleurs codes et liens de parrainage, vérifiés à la main.",
-    "en": "Hand-checked referral codes and sign-up bonuses for France."
+    "en": "Hand-picked referral codes, sign-up bonuses and deals.",
+    "fr": "Codes de parrainage, primes de bienvenue et bons plans, sélectionnés à la main."
   },
   "description": {
-    "fr": "Codes et liens de parrainage vérifiés pour banques, néobanques, investissement et services en France. Bonus de bienvenue pour les nouveaux clients.",
-    "en": "Verified referral links and codes for French banks, neobanks, brokers and services. Welcome bonuses for new customers who sign up through them."
+    "en": "Verified referral links, invite codes, sign-up bonuses and promo codes for banks, apps, AI tools and services, in France and worldwide.",
+    "fr": "Liens de parrainage, codes promo et primes de bienvenue vérifiés pour banques, apps, outils IA et services, en France et à l'international."
   },
   "referrers": {
     "michelle": "Michelle",
